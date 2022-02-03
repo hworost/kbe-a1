@@ -80,7 +80,7 @@ class Swept:
             cur = curve.body
             curves2.append(cur)
 
-        line1 = self.guide[0].line
+        firstObjectToStartGuide = self.guide[0].body
 
         curveDumbRule2 = workPart.ScRuleFactory.CreateRuleBaseCurveDumb(
             curves2, selectionIntentRuleOptions2)
@@ -89,7 +89,7 @@ class Swept:
         rules2[0] = curveDumbRule2
         helpPoint2 = NXOpen.Point3d(
             3.5527136788005009e-15, 3.5527136788005009e-15, 87.501707636101486)
-        section2.AddToSection(rules2, line1, NXOpen.NXObject.Null,
+        section2.AddToSection(rules2, firstObjectToStartGuide, NXOpen.NXObject.Null,
                               NXOpen.NXObject.Null, helpPoint2, NXOpen.Section.Mode.Create, False)
 
         self.body = sweptBuilder.Commit().GetBodies()[0]
