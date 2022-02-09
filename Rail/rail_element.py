@@ -32,8 +32,8 @@ class RailElement:
             self.y1 = params[1][1]
             self.z1 = params[1][2]
             self.ipe_profile = params[2]
-            self.makePath()
-            self.makeSweepCall()
+            self.getPath()
+            self.displayRail()
 
         if(len(params) == 5):
             # Arc: (startAng, endAng, radius, (xc, yc, zc))
@@ -47,7 +47,7 @@ class RailElement:
             self.z0 = center[2]    
             self.ipe_profile = params[3]    
 
-    def makePath(self):
+    def getPath(self):
         path = None
         if self.type == "line":
             self.path = Line(self.x0, self.y0, self.z0, self.x1, self.y1, self.z1)
@@ -59,8 +59,9 @@ class RailElement:
                        (0, 0, 1),
                        self.radius, self.startAng, self.endAng)
             # self.end_point = [TODO]
+        return self.path
 
-    def makeSweepCall(self):
+    def displayRail(self):
         Swept([self.path], self.get_cross_section_xz())
 
     def get_end_point(self):

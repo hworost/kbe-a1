@@ -13,7 +13,13 @@ class Rail:
         # Line (x0,y0,z0), (x1,y1,z1)
         # Curve (startAng, endAng, radius, (xc, yc, zc))
         # Try first with the lines, then the arc. 
+
+        # Split path into rail element sections
+        
         pass
 
-    # Toy can make just for visualixation purposes so only use a single part, push whole path inside
+    def setStandardLength(self, stdLength):
+        self.stdLength = stdLength
+
+    # You can make just for visualixation purposes so only use a single part, push whole path inside
     # Keep other interesting parameteres for later manufacturing .
