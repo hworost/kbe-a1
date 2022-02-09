@@ -5,5 +5,5 @@ class PathGenerator:
 
     def makePath(pointA, pointB):
         
-
+        
         pass

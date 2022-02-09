@@ -5,13 +5,11 @@ from Shapes.swept import Swept
 from Shapes.line import Line
 from Shapes.arc import Arc
 
-
 # NOTES
 # generate whole path and separate where are the straight and where are the curved elements?
 # if straight elem length is above max-length, divide it.
 # Path is pure geometry, railelement is max maxlenght and is more feasible
 # Make straight lines, then if 
-
 
 
 class RailElement:
@@ -37,7 +35,7 @@ class RailElement:
 
         if(len(params) == 5):
             # Arc: (startAng, endAng, radius, (xc, yc, zc))
-            self.tyoe = "arc"
+            self.type = "arc"
             self.startAng = params[0]
             self.endAng = params[1]
             self.radius = params[2]
@@ -56,7 +54,7 @@ class RailElement:
             # Arc((center), (xDirection), (yDirection), radius, startAngle, endAngle)
             self.path = Arc(-self.radius, 0, 0,
                        (1, 0, 0),
-                       (0, 0, 1),
+                       (0, 1, 0),
                        self.radius, self.startAng, self.endAng)
             # self.end_point = [TODO]
         return self.path
