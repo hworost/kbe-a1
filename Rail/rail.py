@@ -8,19 +8,22 @@ class Rail:
 
     def __init__(self, path):
         for x in path:
-            if len(path) == 3:
-                self.type = "line"
-                self.x0 = path[0][0]
-                self.y0 = path[0][1]
-                self.z0 = path[0][2]
-                self.x1 = path[1][0]
-                self.y1 = path[1][1]
-                self.z1 = path[1][2]
-                self.ipe_profile = path[2]
+            self.type = path[0]
+            if(self.type == "line"):
+                self.x0 = path[1][0]
+                self.y0 = path[1][1]
+                self.z0 = path[1][2]
+                self.x1 = path[2][0]
+                self.y1 = path[2][1]
+                self.z1 = path[2][2]
+                self.ipe_profile = path[3]
                 
         self.generateRails(path)
 
     def generateRails(self, path):
+        if (path[2][1] - path[1][1] > 4000):
+            path[2][1] = path[2][1]- "rest"; #Still a work in progress
+
         return RailElement(path);
         # Creates the rail elements based on path.
         # Line (x0,y0,z0), (x1,y1,z1)
