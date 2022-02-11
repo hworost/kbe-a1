@@ -1,9 +1,9 @@
 # RailElement.py - class file
 import sys, os
 sys.path.insert(0, os.path.abspath('..'))
-from Shapes.swept import Swept
-from Shapes.line import Line
-from Shapes.arc import Arc
+from Shapes.Swept import Swept
+from Shapes.Line import Line
+from Shapes.Arc import Arc
 import math;
 
 # NOTES
@@ -30,7 +30,7 @@ class RailElement:
             self.x1 = params[2][0]
             self.y1 = params[2][1]
             self.z1 = params[2][2]
-            self.ipe_profile = params[2]
+            self.ipe_profile = params[3]
             self.getPath()
             self.displayRail()
 
@@ -79,35 +79,35 @@ class RailElement:
             x0 = self.x0
             y0 = self.y0
             z0 = self.z0
-            line1 = Line(x0, z0, y0, x0 + b, z0, y0)
-            line2 = Line(x0 + b, z0, y0, x0 + b, z0, y0 + t)
-            line3 = Line(x0 + b, z0, y0 + t, x0 + (b+s)/2, z0, y0 + t)
-            line4 = Line(x0 + (b+s)/2, z0, y0 + t, x0 + (b+s)/2, z0, y0 + h-t)
-            line5 = Line(x0 + (b+s)/2, z0, y0 + h-t, x0 + b, z0, y0 + h-t)
-            line6 = Line(x0 + b, z0, y0 + h-t, x0 + b, z0, y0 + h)
-            line7 = Line(x0 + b, z0, y0 + h, x0 + 0, z0, y0 + h)
-            line8 = Line(x0, z0, y0 + h, x0 + 0, z0, y0 + h-t)
-            line9 = Line(x0, z0, y0 + h-t, x0 + (b-s)/2, z0, y0 + h-t)
-            line10 = Line(x0 + (b-s)/2, z0, y0 + h-t, x0 + (b-s)/2, z0, y0 + t)
-            line11 = Line(x0 + (b-s)/2, z0, y0 + t,x0, z0, y0 + t)
-            line12 = Line(x0, z0, y0 + t, x0, z0, y0)
+            line1 = Line(x0, y0, z0, x0 + b, y0, z0)
+            line2 = Line(x0 + b, y0, z0, x0 + b, y0, z0 + t)
+            line3 = Line(x0 + b, y0, z0 + t, x0 + (b+s)/2, y0, z0 + t)
+            line4 = Line(x0 + (b+s)/2, y0, z0 + t, x0 + (b+s)/2, y0, z0 + h-t)
+            line5 = Line(x0 + (b+s)/2, y0, z0 + h-t, x0 + b, y0, z0 + h-t)
+            line6 = Line(x0 + b, y0, z0 + h-t, x0 + b, y0, z0 + h)
+            line7 = Line(x0 + b, y0, z0 + h, x0 + 0, y0, z0 + h)
+            line8 = Line(x0, y0, z0 + h, x0 + 0, y0, z0 + h-t)
+            line9 = Line(x0, y0, z0 + h-t, x0 + (b-s)/2, y0, z0 + h-t)
+            line10 = Line(x0 + (b-s)/2, y0, z0 + h-t, x0 + (b-s)/2, y0, z0 + t)
+            line11 = Line(x0 + (b-s)/2, y0, z0 + t, x0, y0, z0 + t)
+            line12 = Line(x0, y0, z0 + t, x0, y0, z0)
         
         if(self.type == "arc"):
             x0 = self.xc + self.radius
             y0 = self.yc
             z0 = self.zc
-            line1 = Line(x0, z0, y0, x0 + b, z0, y0)
-            line2 = Line(x0 + b, z0, y0, x0 + b, z0, y0 + t)
-            line3 = Line(x0 + b, z0, y0 + t, x0 + (b+s)/2, z0, y0 + t)
-            line4 = Line(x0 + (b+s)/2, z0, y0 + t, x0 + (b+s)/2, z0, y0 + h-t)
-            line5 = Line(x0 + (b+s)/2, z0, y0 + h-t, x0 + b, z0, y0 + h-t)
-            line6 = Line(x0 + b, z0, y0 + h-t, x0 + b, z0, y0 + h)
-            line7 = Line(x0 + b, z0, y0 + h, x0 + 0, z0, y0 + h)
-            line8 = Line(x0, z0, y0 + h, x0 + 0, z0, y0 + h-t)
-            line9 = Line(x0, z0, y0 + h-t, x0 + (b-s)/2, z0, y0 + h-t)
-            line10 = Line(x0 + (b-s)/2, z0, y0 + h-t, x0 + (b-s)/2, z0, y0 + t)
-            line11 = Line(x0 + (b-s)/2, z0, y0 + t,x0, z0, y0 + t)
-            line12 = Line(x0, z0, y0 + t, x0, z0, y0)
+            line1 = Line(x0, y0, z0, x0 + b, y0, z0)
+            line2 = Line(x0 + b, y0, z0, x0 + b, y0, z0 + t)
+            line3 = Line(x0 + b, y0, z0 + t, x0 + (b+s)/2, y0, z0 + t)
+            line4 = Line(x0 + (b+s)/2, y0, z0 + t, x0 + (b+s)/2, y0, z0 + h-t)
+            line5 = Line(x0 + (b+s)/2, y0, z0 + h-t, x0 + b, y0, z0 + h-t)
+            line6 = Line(x0 + b, y0, z0 + h-t, x0 + b, y0, z0 + h)
+            line7 = Line(x0 + b, y0, z0 + h, x0 + 0, y0, z0 + h)
+            line8 = Line(x0, y0, z0 + h, x0 + 0, y0, z0 + h-t)
+            line9 = Line(x0, y0, z0 + h-t, x0 + (b-s)/2, y0, z0 + h-t)
+            line10 = Line(x0 + (b-s)/2, y0, z0 + h-t, x0 + (b-s)/2, y0, z0 + t)
+            line11 = Line(x0 + (b-s)/2, y0, z0 + t, x0, y0, z0 + t)
+            line12 = Line(x0, y0, z0 + t, x0, y0, z0)
 
         return [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10, line11, line12]
          
