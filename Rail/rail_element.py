@@ -1,9 +1,9 @@
 # RailElement.py - class file
 import sys, os
 sys.path.insert(0, os.path.abspath('..'))
-from Shapes.Swept import Swept
-from Shapes.Line import Line
-from Shapes.Arc import Arc
+from Shapes.swept import Swept
+from Shapes.line import Line
+from Shapes.arc import Arc
 import math;
 
 # NOTES

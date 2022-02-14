@@ -1,18 +1,11 @@
 from Rail.rail_element import RailElement
+from Rail.rail import Rail
 
 # RailElement 
-# Arc: (startAng, endAng, radius, (xc, yc, zc))
-type = "arc"
-startAng = 0
-endAng = 90
-radius = 1000
-xc = 0
-yc = 0
-zc = 0
-ipe_profile = 200
+#rail_elem_line = RailElement([[0, 0, 0], [0, 100, 0], 200])
+testRail = Rail(["line",[0,0,0],[0,5000,0], 200])
 
-params1 = [type, startAng, endAng, radius, [xc, yc, zc], ipe_profile]
+testRail2 = Rail(["line",[0,5000,0],[0,10000,0], 200])
 
-rail_elem1 = RailElement(params1)
-
-# rail_elem1 = RailElement([[0, 0, 0], [0, 10000, 0], 200])
+#rail_elem_arc = RailElement[0, 180, 600, [0, 0, 0], 200]
+#rail_elem_arc = RailElement[0, 180, 600, [0, 0, 0], 200]
