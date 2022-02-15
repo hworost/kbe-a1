@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.abspath('..'))
 from Shapes.swept import Swept
 from Shapes.line import Line
 from Shapes.arc import Arc
-import math as ma;
+import math as ma
 
 # NOTES
 # generate whole path and separate where are the straight and where are the curved elements?
